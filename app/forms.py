@@ -1,9 +1,9 @@
 from django.forms import ModelForm
-from app.models import Carros
+from app.models import Vinhos
 
 
 # Create the form class.
-class CarrosForm(ModelForm):
+class VinhosForm(ModelForm):
     class Meta:
-        model = Carros
-        fields = ["modelo", "marca", "ano"]
+        model = Vinhos
+        fields = ["acidez_fixa", "acidez_volátil", "acido_cítrico", "acucar_residual", "cloretos", "dióxido_de_enxofre_livre", "dióxido_de_enxofre_total", "densidade", "pH", "sulfatos", "álcool"]
