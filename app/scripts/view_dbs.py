@@ -3,7 +3,7 @@ import sqlite3
 
 def database():
     # Exemplo de valores das características para fazer a predição
-    conn = sqlite3.connect('/home/eriknathan/Estudos/faculdade/trabalho-ia-vinhos/db.sqlite3')  # substitua pelo caminho correto para o seu banco de dados
+    conn = sqlite3.connect('db.sqlite3')  # substitua pelo caminho correto para o seu banco de dados
     cursor = conn.cursor()
 
     # Executando uma consulta para obter os valores dos campos
