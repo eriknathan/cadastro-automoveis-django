@@ -1,12 +1,15 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect, render
+
 from app.forms import VinhosForm
 from app.scripts.user_model import using_model
+from app.scripts.view_dbs import database
 
 
 # Create your views here.
 def home(request):
     data = using_model()
-    return render(request, 'index.html', {'predicao': data})
+    dbs = database()
+    return render(request, 'index.html', {'predicao': data, 'db': dbs})
 
 
 def form(request):
@@ -20,31 +23,3 @@ def create(request):
     if form.is_valid():
         form.save()
         return redirect('home')
-
-
-# def view(request, pk):
-#     data = {}
-#     data['db'] = Vinhos.objects.get(pk=pk)
-#     return render(request, 'view.html', data)
-
-
-# def edit(request, pk):
-#     data = {}
-#     data['db'] = Vinhos.objects.get(pk=pk)
-#     data['form'] = VinhosForm(instance=data['db'])
-#     return render(request, 'form.html', data)
-
-
-# def update(request, pk):
-#     data = {}
-#     data['db'] = Vinhos.objects.get(pk=pk)
-#     form = VinhosForm(request.POST or None, instance=data['db'])
-#     if form.is_valid():
-#         form.save()
-#         return redirect('home')
-
-
-# def delete(request, pk):
-#     db = Vinhos.objects.get(pk=pk)
-#     db.delete()
-#     return redirect('home')
