@@ -6,7 +6,7 @@ from sklearn.model_selection import cross_val_score
 import joblib
 
 # Carregar os dados do arquivo CSV
-data = pd.read_csv('C:\\Users\\Julio\\Documents\\Kropneus\\trabalho-ia-vinhos\\app\\scripts\\winequality-red.csv')
+data = pd.read_csv('/home/eriknathan/Estudos/faculdade/trabalho-ia-vinhos/app/scripts/winequality-red.csv')
 
 # Dividir os dados em recursos (features) e rótulos (labels)
 X = data.drop('quality', axis=1)  # Features
